@@ -10,10 +10,10 @@
       <p>You have successfully deployed a Java EE 6 web application on JBoss AS 7.</p>
 
       <h:form id="reg">
-         <h2>Register (Bean Validation example)</h2>
-         <p>Enforces annotation-based constraints defined on the model class.</p>
+         <h2>Đăng ký mới</h2>
+         <p></p>
          <h:panelGrid columns="3" columnClasses="titleCell">
-            <h:outputLabel for="name" value="Name:"/>
+            <h:outputLabel for="name" value="Tên:"/>
             <h:inputText id="name" value="#{newMember.name}" />
             <h:message for="name" errorClass="invalid"/>
 
@@ -21,7 +21,7 @@
             <h:inputText id="email" value="#{newMember.email}"/>
             <h:message for="email" errorClass="invalid"/>
 
-            <h:outputLabel for="phoneNumber" value="Phone #:"/>
+            <h:outputLabel for="phoneNumber" value="Số điện thoại:"/>
             <h:inputText id="phoneNumber" value="#{newMember.phoneNumber}"/>
             <h:message for="phoneNumber" errorClass="invalid"/>
          </h:panelGrid>
@@ -44,7 +44,7 @@
                 #{_member.id}
             </h:column>
          <h:column>
-            <f:facet name="header">Name</f:facet>
+            <f:facet name="header">Tên</f:facet>
                 #{_member.name}
             </h:column>
          <h:column>
@@ -52,16 +52,13 @@
                 #{_member.email}
             </h:column>
          <h:column>
-            <f:facet name="header">Phone #</f:facet>
+            <f:facet name="header">Số điện thoại</f:facet>
                 #{_member.phoneNumber}
             </h:column>
          <h:column>
             <f:facet name="header">REST URL</f:facet>
             <a href="#{request.contextPath}/rest/members/#{_member.id}">/rest/members/#{_member.id}</a>
          </h:column>
-         <f:facet name="footer">
-            REST URL for all members: <a href="#{request.contextPath}/rest/members">/rest/members</a>
-         </f:facet>
       </h:dataTable>
    </ui:define>
 </ui:composition>
