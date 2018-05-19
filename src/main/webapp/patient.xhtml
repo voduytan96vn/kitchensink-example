@@ -10,7 +10,7 @@
     <h:form id="reg">
       <h2>Đăng ký mới</h2>
       <p></p>
-      <h:panelGrid columns="3" columnClasses="titleCell" styleClass="default">
+      <h:panelGrid columns="4" columnClasses="titleCell" styleClass="default">
         <h:outputLabel for="name" value="Tên:" />
         <h:inputText id="name" value="#{newMember.name}" />
         <h:message for="name" errorClass="invalid" />
@@ -33,10 +33,8 @@
       </h:panelGrid>
 
       <p>
-        <h:panelGrid columns="2">
-          <h:commandButton id="register" action="#{memberService.register}" value="Đăng ký" />
-          <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning" globalOnly="true" />
-        </h:panelGrid>
+        <h:commandButton id="register" action="#{memberService.register}" value="Đăng ký" />
+        <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning" globalOnly="true" />
       </p>
 
       <h2>Danh sách bệnh nhân</h2>
