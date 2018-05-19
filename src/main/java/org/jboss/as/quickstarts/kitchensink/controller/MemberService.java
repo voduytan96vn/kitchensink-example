@@ -44,7 +44,7 @@ public class MemberService {
 		log.info("Registering " + newMember.getName());
 		em.persist(newMember);
 		facesContext.addMessage(null,
-				new FacesMessage(FacesMessage.SEVERITY_INFO, "Registered!", "Registration successful"));
+				new FacesMessage(FacesMessage.SEVERITY_INFO, "Đăng ký thành công!", "Registration successful"));
 		memberEventSrc.fire(newMember);
 		initNewMember();
 	}

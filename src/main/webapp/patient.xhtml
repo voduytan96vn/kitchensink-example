@@ -15,6 +15,10 @@
         <h:inputText id="name" value="#{newMember.name}" />
         <h:message for="name" errorClass="invalid" />
 
+        <h:outputLabel for="birthdate" value="Ngày sinh:" />
+        <h:inputText id="birthdate" value="#{newMember.birthdate}" />
+        <h:message for="birthdate" errorClass="invalid" />
+
         <h:outputLabel for="email" value="Email:" />
         <h:inputText id="email" value="#{newMember.email}" />
         <h:message for="email" errorClass="invalid" />
@@ -22,11 +26,15 @@
         <h:outputLabel for="phoneNumber" value="Số điện thoại:" />
         <h:inputText id="phoneNumber" value="#{newMember.phoneNumber}" />
         <h:message for="phoneNumber" errorClass="invalid" />
+
+        <h:outputLabel for="address" value="Địa chỉ:" />
+        <h:inputText id="address" value="#{newMember.address}" />
+        <h:message for="address" errorClass="invalid" />
       </h:panelGrid>
 
       <p>
         <h:panelGrid columns="2">
-          <h:commandButton id="register" action="#{memberService.register}" value="Register" />
+          <h:commandButton id="register" action="#{memberService.register}" value="Đăng ký" />
           <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning" globalOnly="true" />
         </h:panelGrid>
       </p>
@@ -63,7 +71,7 @@
       </h:column>
       <h:column>
         <f:facet name="header">Xóa</f:facet>
-        <h:commandButton actionListener="#{memberService.delete(item)}" styleClass="buttons" value="Xóa" />
+        <h:commandButton actionListener="#{memberService.delete(member)}" styleClass="buttons" value="Xóa" />
       </h:column>
     </h:dataTable>
   </ui:define>

@@ -32,7 +32,7 @@ public class Member implements Serializable {
 	@Pattern(regexp = "[A-Za-z ]*", message = "must contain only letters and spaces")
 	private String name;
 
-	private String birthDate;
+	private String birthdate;
 
 	@NotNull
 	@NotEmpty
@@ -63,12 +63,12 @@ public class Member implements Serializable {
 		this.name = name;
 	}
 
-	public String getBirthDate() {
-		return birthDate;
+	public String getBirthdate() {
+		return birthdate;
 	}
 
-	public void setBirthDate(String birthDate) {
-		this.birthDate = birthDate;
+	public void setBirthDate(String birthdate) {
+		this.birthdate = birthdate;
 	}
 
 	public String getEmail() {
