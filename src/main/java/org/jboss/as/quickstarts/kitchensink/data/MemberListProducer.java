@@ -22,8 +22,6 @@ public class MemberListProducer {
 
    private List<Member> members;
 
-   // @Named provides access the return value via the EL variable name "members" in the UI (e.g.,
-   // Facelets or JSP view)
    @Produces
    @Named
    public List<Member> getMembers() {
@@ -39,9 +37,7 @@ public class MemberListProducer {
       CriteriaBuilder cb = em.getCriteriaBuilder();
       CriteriaQuery<Member> criteria = cb.createQuery(Member.class);
       Root<Member> member = criteria.from(Member.class);
-      // Swap criteria statements if you would like to try out type-safe criteria queries, a new
-      // feature in JPA 2.0
-      // criteria.select(member).orderBy(cb.asc(member.get(Member_.name)));
+
       criteria.select(member).orderBy(cb.asc(member.get("name")));
       members = em.createQuery(criteria).getResultList();
    }

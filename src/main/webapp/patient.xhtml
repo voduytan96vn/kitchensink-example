@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+  xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
+  template="/WEB-INF/templates/default.xhtml">
+  <ui:define name="content">
+    <h1>Danh sách bệnh nhân</h1>
+
+    <p></p>
+
+    <h:form id="reg">
+      <h2>Đăng ký mới</h2>
+      <p></p>
+      <h:panelGrid columns="3" columnClasses="titleCell" styleClass="default">
+        <h:outputLabel for="name" value="Tên:" />
+        <h:inputText id="name" value="#{newMember.name}" />
+        <h:message for="name" errorClass="invalid" />
+
+        <h:outputLabel for="email" value="Email:" />
+        <h:inputText id="email" value="#{newMember.email}" />
+        <h:message for="email" errorClass="invalid" />
+
+        <h:outputLabel for="phoneNumber" value="Số điện thoại:" />
+        <h:inputText id="phoneNumber" value="#{newMember.phoneNumber}" />
+        <h:message for="phoneNumber" errorClass="invalid" />
+      </h:panelGrid>
+
+      <p>
+        <h:panelGrid columns="2">
+          <h:commandButton id="register" action="#{memberService.register}" value="Register" />
+          <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning" globalOnly="true" />
+        </h:panelGrid>
+      </p>
+    </h:form>
+    <h2>Danh sách bệnh nhân</h2>
+    <h:panelGroup rendered="#{empty members}">
+      <em>Không tìm thấy dữ liệu</em>
+    </h:panelGroup>
+    <h:dataTable var="member" value="#{members}" rendered="#{not empty members}" styleClass="table"
+      headerClass="table-header" rowClasses="table-odd-row,table-even-row">
+      <h:column>
+        <f:facet name="header">Id</f:facet>
+        <h:outputText value="#{member.id}" />
+      </h:column>
+      <h:column>
+        <f:facet name="header">Tên</f:facet>
+        <h:outputText value="#{member.name}" />
+      </h:column>
+      <h:column>
+        <f:facet name="header">Ngày sinh</f:facet>
+        <h:outputText value="#{member.birthDate}" />
+      </h:column>
+      <h:column>
+        <f:facet name="header">Email</f:facet>
+        <h:outputText value="#{member.email}" />
+      </h:column>
+      <h:column>
+        <f:facet name="header">Số điện thoại</f:facet>
+        <h:outputText value="#{member.phoneNumber}" />
+      </h:column>
+      <h:column>
+        <f:facet name="header">Địa chỉ</f:facet>
+        <h:outputText value="#{member.address}" />
+      </h:column>
+      <h:column>
+        <f:facet name="header">Xóa</f:facet>
+        <h:commandButton actionListener="#{memberService.delete(item)}" styleClass="buttons" value="Xóa" />
+      </h:column>
+    </h:dataTable>
+  </ui:define>
+</ui:composition>

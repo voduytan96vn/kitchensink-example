@@ -21,58 +21,77 @@ import org.hibernate.validator.constraints.NotEmpty;
 @XmlRootElement
 @Table(uniqueConstraints = @UniqueConstraint(columnNames = "email"))
 public class Member implements Serializable {
-   /** Default value included to remove warning. Remove or modify at will. **/
-   private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-   @Id
-   @GeneratedValue
-   private Long id;
+	@Id
+	@GeneratedValue
+	private Long id;
 
-   @NotNull
-   @Size(min = 1, max = 25)
-   @Pattern(regexp = "[A-Za-z ]*", message = "must contain only letters and spaces")
-   private String name;
+	@NotNull
+	@Size(min = 1, max = 25)
+	@Pattern(regexp = "[A-Za-z ]*", message = "must contain only letters and spaces")
+	private String name;
 
-   @NotNull
-   @NotEmpty
-   @Email
-   private String email;
+	private String birthDate;
 
-   @NotNull
-   @Size(min = 10, max = 12)
-   @Digits(fraction = 0, integer = 12)
-   @Column(name = "phone_number")
-   private String phoneNumber;
+	@NotNull
+	@NotEmpty
+	@Email
+	private String email;
 
-   public Long getId() {
-      return id;
-   }
+	@NotNull
+	@Size(min = 10, max = 12)
+	@Digits(fraction = 0, integer = 12)
+	@Column(name = "phone_number")
+	private String phoneNumber;
 
-   public void setId(Long id) {
-      this.id = id;
-   }
+	private String address;
 
-   public String getName() {
-      return name;
-   }
+	public Long getId() {
+		return id;
+	}
 
-   public void setName(String name) {
-      this.name = name;
-   }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-   public String getEmail() {
-      return email;
-   }
+	public String getName() {
+		return name;
+	}
 
-   public void setEmail(String email) {
-      this.email = email;
-   }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-   public String getPhoneNumber() {
-      return phoneNumber;
-   }
+	public String getBirthDate() {
+		return birthDate;
+	}
 
-   public void setPhoneNumber(String phoneNumber) {
-      this.phoneNumber = phoneNumber;
-   }
+	public void setBirthDate(String birthDate) {
+		this.birthDate = birthDate;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
 }
