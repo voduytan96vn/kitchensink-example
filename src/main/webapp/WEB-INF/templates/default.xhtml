@@ -1,15 +1,18 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
-  xmlns:ui="http://java.sun.com/jsf/facelets">
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core"
+  xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets"
+  xmlns:p="http://xmlns.jcp.org/jsf/passthrough" encoding="UTF-8" contentType="text/html;charset=UTF-8">
+  <html>
 <h:head>
   <title>Java EE Application</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <h:outputStylesheet name="css/screen.css" />
-  <h:outputStylesheet href="css/fontawesome-all.css" rel="stylesheet" type="text/css" />
-  <h:outputStylesheet href="css/jquery-ui-1.css" rel="stylesheet" type="text/css" />
-  <h:outputStylesheet href="css/jquery.css" rel="stylesheet" type="text/css" />
-  <h:outputStylesheet href="css/bootstrap.css" rel="stylesheet" />
+  <h:outputStylesheet name="css/fontawesome-all.css" rel="stylesheet" type="text/css" />
+  <link href="#{request.contextPath}/resources/css/jquery-ui-1.css" rel="stylesheet" type="text/css" />
+  <link href="#{request.contextPath}/resources/css/jquery.css" rel="stylesheet" type="text/css" />
+  <link href="#{request.contextPath}/resources/css/bootstrap.css" rel="stylesheet" type="text/css" />
+
   <script src="#{request.contextPath}/resources/scripts/jquery.js" type="text/javascript"></script>
   <script src="#{request.contextPath}/resources/scripts/jquery-ui.js" type="text/javascript"></script>
   <script src="#{request.contextPath}/resources/scripts/bootstrap.min.js" type="text/javascript"></script>
@@ -61,4 +64,5 @@
     </div>
   </div>
 </h:body>
-</html>
+  </html>
+</f:view>

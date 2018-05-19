@@ -67,7 +67,7 @@ public class Member implements Serializable {
 		return birthdate;
 	}
 
-	public void setBirthDate(String birthdate) {
+	public void setBirthdate(String birthdate) {
 		this.birthdate = birthdate;
 	}
 
